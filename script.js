@@ -1,4 +1,5 @@
 (function Gameboard () {
+    let isWinnerAnnounced = false;
     let turn = 0;
     let boardArray = [];
     
@@ -40,6 +41,7 @@
                 if(boardArray[winCombos[i][x]] == currentMark){
                     comboStrike++;
                     if(comboStrike == 3){
+                        isWinnerAnnounced = true;
                         displayScreen.printWinner(currentPlayer);
                     }
                 }
@@ -54,9 +56,13 @@
                 boardArray[element.target.id] = playerMark;
                 checkWin();
                 turn ++;
+                if(turn == 9 && isWinnerAnnounced === false){
+                    displayScreen.populateScreen("Its tie. Click on board or reset button to reset game");
+                }
             }
         }
         else {
+            
             resetGame();
         }
     }
@@ -105,5 +111,5 @@ const displayScreen = (() => {
     const resetScreen = () => {
         screen.innerHTML = "";
     }
-    return{printWinner,resetScreen,};
+    return{printWinner,resetScreen,populateScreen};
 })();
