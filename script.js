@@ -34,15 +34,14 @@
     //If comboStrike == 3, winner
     const checkWin = () => {
         let comboStrike = 0; //if combostrike become 3, win
-        let currentMark = whoPlays().mark;
-        let currentPlayer =  whoPlays().name;
+        let currentMark = whoPlays().mark; 
         for(i = 0; i < winCombos.length; i++){
             for(x = 0; x < 4; x++){
                 if(boardArray[winCombos[i][x]] == currentMark){
                     comboStrike++;
                     if(comboStrike == 3){
                         isWinnerAnnounced = true;
-                        displayScreen.printWinner(currentPlayer);
+                        displayScreen.printWinner(whoPlays().name);
                     }
                 }
             }
@@ -50,7 +49,7 @@
         }   
     }
     const playRound = (element) => {
-        if(turn <= 8){
+        if(turn <= 8 && isWinnerAnnounced === false){
             let playerMark = placeMarker(element);
             if(playerMark !== undefined){
                 boardArray[element.target.id] = playerMark;
@@ -62,7 +61,6 @@
             }
         }
         else {
-            
             resetGame();
         }
     }
@@ -91,6 +89,7 @@
     const resetGame = () => {
         boardArray.length = 0;
         turn = 0;
+        isWinnerAnnounced = false;
         grids.forEach(element => {
             element.innerHTML = "";
         });
@@ -105,8 +104,7 @@ const displayScreen = (() => {
         screen.innerHTML += text;
     }
     const printWinner = (winnerName) => {
-        screen.innerHTML = `Winner is: ${winnerName}`;
-        console.log("in printWinner");
+        screen.innerHTML = `Winner is: ${winnerName}.\nClick on board or reset button to reset`;
     }
     const resetScreen = () => {
         screen.innerHTML = "";
