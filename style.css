@@ -141,12 +141,12 @@ body {
 header{
 	display: flex;
 	justify-content: center;
-	height: 10vh;
+	height: 6vh;
 	background-color: #F2BE22;
 }
 #main_container{
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	width: 100vw;
 	height: 90vh;
@@ -194,3 +194,47 @@ header{
 	border-width: 0px var(--border_width) 0px 0px;
 	border-style: solid;
 }
+#displayScreen{
+	width: 450px;
+	height: 120px;
+	color:#F2BE22;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+	margin-bottom: 60px;
+	margin-top: 20px;
+	font-size: 50px;
+}
+.bn31 {
+	background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+	border-radius: 40px;
+	box-sizing: border-box;
+	color: #00a84f;
+	display: block;
+	height: 50px;
+	font-size: 1.4em;
+	padding: 4px;
+	position: relative;
+	text-decoration: none;
+	width: 7em;
+	z-index: 2;
+	margin-top: 30px;
+  }
+  
+  .bn31:hover {
+	color: #fff;
+  }
+  
+  .bn31 .bn31span {
+	align-items: center;
+	background: #0e0e10;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	transition: background 0.5s ease;
+	width: 100%;
+  }
+  
+  .bn31:hover .bn31span {
+	background: transparent;
+  }

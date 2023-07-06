@@ -1,7 +1,8 @@
 (function Gameboard () {
     let turn = 0;
     let boardArray = [];
-    const winCombos = [
+    
+    const winCombos = [ //win conditions 
         [0,1,2],
         [0,3,6],
         [3,4,5],
@@ -56,7 +57,7 @@
             }
         }
         else {
-            //PLACE TIE OR RESET GAME CODE HERE
+            resetGame();
         }
     }
     
@@ -94,13 +95,15 @@
 
 const displayScreen = (() => {
     const screen = document.querySelector("#screen");
-    
+    const populateScreen = (text) => {
+        screen.innerHTML += text;
+    }
     const printWinner = (winnerName) => {
-        screen.innerHTML = winnerName
+        screen.innerHTML = `Winner is: ${winnerName}`;
         console.log("in printWinner");
     }
     const resetScreen = () => {
         screen.innerHTML = "";
     }
-    return{printWinner,resetScreen};
+    return{printWinner,resetScreen,};
 })();
