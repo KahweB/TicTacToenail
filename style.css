@@ -130,15 +130,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+body, html {
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 100%;
+    width: 100%;
+}
 body {
 	background-color: #22A699;
+}
+header{
+	display: flex;
+	justify-content: center;
+	height: 10vh;
+	background-color: #F2BE22;
 }
 #main_container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	height: 100vh;
+	height: 90vh;
 }
 #game_container{
 	display: grid;
@@ -147,36 +158,39 @@ body {
 .grid{
 	border-color: #F2BE22;
 	height: 150px;
+	color: #F2BE22;
+	font-size: 150px;
+	text-align: center;
 }
-#grid1{
+#game_container > div:nth-child(1){
 	border-width: 0px var(--border_width) var(--border_width) 0px;
 	border-style: solid
 }
-#grid2{
+#game_container > div:nth-child(2){
 	border-width: 0px var(--border_width) var(--border_width) 0px;
 	border-style: solid;
 }
-#grid3{
+#game_container > div:nth-child(3){
 	border-width: 0px 0px var(--border_width) 0px;
 	border-style: solid;
 }
-#grid4{
+#game_container > div:nth-child(4){
 	border-width: 0px var(--border_width) var(--border_width) 0px;
 	border-style: solid;
 }
-#grid5{
+#game_container > div:nth-child(5){
 	border-width: 0px var(--border_width) var(--border_width) 0px;
 	border-style: solid;
 }
-#grid6{
+#game_container > div:nth-child(6){
 	border-width: 0px 0px var(--border_width) 0px;
 	border-style: solid;
 }
-#grid7{
+#game_container > div:nth-child(7){
 	border-width: 0px var(--border_width) 0px 0px;
 	border-style: solid;
 }
-#grid8{
+#game_container > div:nth-child(8){
 	border-width: 0px var(--border_width) 0px 0px;
 	border-style: solid;
 }
