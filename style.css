@@ -105,9 +105,7 @@ nav,
 section {
 	display: block;
 }
-:root{
-	--border_width: 7px;
-}
+
 body {
 	line-height: 1;
 }
@@ -130,26 +128,36 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*------------ END OF CSS RESET -------------*/
+:root{
+	--border_width: 7px;
+	--font_Color: #EB5A54;
+}
 body, html {
     font-family: 'Source Sans Pro', sans-serif;
     height: 100%;
     width: 100%;
 }
 body {
-	background-color: #22A699;
+	background-color: #181a1b;
 }
 header{
+	font-family: 'Pacifico', cursive;
 	display: flex;
 	justify-content: center;
-	height: 6vh;
-	background-color: #F2BE22;
+	align-items: center;
+	padding-top: 10px;
+	height: 10vh;
+	font-size: 8vh;
+	color: var(--font_Color);
+	background-color: #181a1b;
 }
 #main_container{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100vw;
-	height: 90vh;
+	height: 70vh;
 }
 #game_container{
 	display: grid;
@@ -196,45 +204,74 @@ header{
 }
 #displayScreen{
 	width: 450px;
-	height: 120px;
+	height: 90px;
 	color:#F2BE22;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Pacifico', sans-serif;
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 	margin-top: 20px;
-	font-size: 50px;
+	font-size: 4vh;
 }
-.bn31 {
-	background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
-	border-radius: 40px;
-	box-sizing: border-box;
-	color: #00a84f;
-	display: block;
-	height: 50px;
-	font-size: 1.4em;
-	padding: 4px;
+.button {
+	--main-focus: #2d8cf0;
+	--font-color: #dedede;
+	--bg-color-sub: #EB5A54;
+	--bg-color: #e06b67;
+	--main-color: #dedede;
 	position: relative;
-	text-decoration: none;
-	width: 7em;
-	z-index: 2;
-	margin-top: 30px;
-  }
-  
-  .bn31:hover {
-	color: #fff;
-  }
-  
-  .bn31 .bn31span {
-	align-items: center;
-	background: #0e0e10;
-	border-radius: 40px;
+	width: 150px;
+	height: 40px;
+	margin-top: 50px;
+	cursor: pointer;
 	display: flex;
-	justify-content: center;
-	height: 100%;
-	transition: background 0.5s ease;
-	width: 100%;
+	align-items: center;
+	border: 2px solid var(--main-color);
+	box-shadow: 4px 4px var(--main-color);
+	background-color: var(--bg-color);
+	border-radius: 10px;
+	overflow: hidden;
   }
   
-  .bn31:hover .bn31span {
-	background: transparent;
+  .button, .button__icon, .button__text {
+	transition: all 0.3s;
+  }
+  
+  .button .button__text {
+	transform: translateX(33px);
+	color: var(--font-color);
+	font-weight: 600;
+  }
+  
+  .button .button__icon {
+	position: absolute;
+	transform: translateX(109px);
+	height: 100%;
+	width: 39px;
+	background-color: var(--bg-color-sub);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .button .svg {
+	width: 20px;
+	fill: var(--main-color);
+  }
+  
+  .button:hover {
+	background: var(--bg-color);
+  }
+  
+  .button:hover .button__text {
+	color: transparent;
+  }
+  
+  .button:hover .button__icon {
+	width: 148px;
+	transform: translateX(0);
+  }
+  
+  .button:active {
+	transform: translate(3px, 3px);
+	box-shadow: 0px 0px var(--main-color);
   }

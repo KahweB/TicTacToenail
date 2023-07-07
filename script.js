@@ -46,8 +46,9 @@
                 }
             }
             comboStrike = 0;
-        }   
+        }
     }
+
     const playRound = (element) => {
         if(turn <= 8 && isWinnerAnnounced === false){
             let playerMark = placeMarker(element);
@@ -56,7 +57,7 @@
                 checkWin();
                 turn ++;
                 if(turn == 9 && isWinnerAnnounced === false){
-                    displayScreen.populateScreen("Its tie. Click on board or reset button to reset game");
+                    displayScreen.populateScreen("Its tie.");
                 }
             }
         }
@@ -104,7 +105,7 @@ const displayScreen = (() => {
         screen.innerHTML += text;
     }
     const printWinner = (winnerName) => {
-        screen.innerHTML = `Winner is: ${winnerName}.\nClick on board or reset button to reset`;
+        screen.innerHTML = `Winner is: ${winnerName}.`;
     }
     const resetScreen = () => {
         screen.innerHTML = "";
